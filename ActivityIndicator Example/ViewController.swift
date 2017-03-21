@@ -25,26 +25,26 @@ class ViewController: UIViewController {
     }
     
     func startActivityIndicator() {
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenSize: CGRect = UIScreen.main.bounds
         
-        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-        activityIndicator.frame = CGRectMake(0, 0, screenSize.width, screenSize.height)
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.White
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
         
-        activityIndicator.backgroundColor = UIColor.blackColor()
+        activityIndicator.backgroundColor = UIColor.black
         activityIndicator.clipsToBounds = true
         activityIndicator.alpha = 0.5
         
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     func stopActivityIndicator() {
         self.activityIndicator.stopAnimating()
-        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        UIApplication.shared.endIgnoringInteractionEvents()
     }
 
 }
